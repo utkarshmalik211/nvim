@@ -132,7 +132,7 @@ let g:coc_explorer_global_presets = {
 \   'floatingLeftside': {
 \      'position': 'floating',
 \      'floating-position': 'left-center',
-\      'floating-width': 30,
+\      'floating-width': 40,
 \   },
 \   'floatingRightside': {
 \      'position': 'floating',
