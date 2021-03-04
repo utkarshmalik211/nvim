@@ -11,8 +11,6 @@ let g:EasyMotion_do_shade = 0
 " nmap s <Plug>(easymotion-s2)
 " nmap t <Plug>(easymotion-t2)
 
-" TODO add separate section for vscode
-
 " map  <Leader>f <Plug>(easymotion-bd-f)
 " nmap <Leader>f <Plug>(easymotion-overwin-f)
 
@@ -33,7 +31,7 @@ nmap <silent> S <Plug>(easymotion-overwin-f2)
 
 " hi link EasyMotionTarget ErrorMsg
 " hi link EasyMotionShade  Comment
-let g:EasyMotion_prompt = '🔎 '
+let g:EasyMotion_prompt = 'search>'
 
 " hi link EasyMotionMoveHL Search
 " hi link EasyMotionIncSearch Search
