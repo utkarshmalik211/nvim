@@ -16,7 +16,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/syntax.vim
 source $HOME/.config/nvim/themes/nvcode.vim
 
-" Plugin Configuration
+  " Plugin Configuration
 source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/vim-commentary.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
@@ -39,8 +39,6 @@ source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/barbar.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/tagalong.vim
-source $HOME/.config/nvim/plug-config/vim-go.vim
-source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/asynctask.vim
 source $HOME/.config/nvim/plug-config/window-swap.vim
@@ -48,13 +46,15 @@ source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/neovide.vim
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/vimspector.vim
+
+source $HOME/.config/nvim/plug-config/vim-go.vim
+source $HOME/.config/nvim/plug-config/vim-rust.vim
 " source $HOME/.config/nvim/plug-config/sneak.vim
 " source $HOME/.config/nvim/plug-config/rainbow.vim
 " source $HOME/.config/nvim/plug-config/illuminate.vim
 " source $HOME/.config/nvim/plug-config/vista.vim
 " source $HOME/.config/nvim/plug-config/xtabline.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
-
 source $HOME/.config/nvim/plug-config/quickscope.vim
 
 " Add paths to node and python here
