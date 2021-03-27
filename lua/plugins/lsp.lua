@@ -81,7 +81,7 @@ nvim_lsp.gopls.setup{
 	on_attach = on_attach_vim,
     root_dir = nvim_lsp.util.root_pattern('go.mod', '.git');
 	capabilities = capabilities,
-	cmd = {"/Users/utkarsh-sib/go/bin/gopls", "--remote=auto"},
+	cmd = {"gopls", "--remote=auto"},
 	settings = {
 		gopls = {
 			analyses = {

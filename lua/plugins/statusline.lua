@@ -84,7 +84,7 @@ section.left[2] = {
         t = nord_colors.red
       }
       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
-      return "   ?  "
+      return "  "
     end,
     highlight = {nord_colors.red, nord_colors.line_bg, "bold"}
   }
@@ -112,7 +112,7 @@ section.left[4] = {
 section.right[1] = {
   GitIcon = {
     provider = function()
-      return "? "
+      return " "
     end,
     condition = require("galaxyline.provider_vcs").check_git_workspace,
     highlight = {nord_colors.orange, nord_colors.line_bg}
@@ -140,7 +140,7 @@ section.right[3] = {
   DiffAdd = {
     provider = "DiffAdd",
     condition = checkwidth,
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.green, nord_colors.line_bg}
   }
 }
@@ -148,7 +148,7 @@ section.right[4] = {
   DiffModified = {
     provider = "DiffModified",
     condition = checkwidth,
-    icon = "?",
+    icon = " ",
     highlight = {nord_colors.yellow, nord_colors.line_bg}
   }
 }
@@ -156,7 +156,7 @@ section.right[5] = {
   DiffRemove = {
     provider = "DiffRemove",
     condition = checkwidth,
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.red, nord_colors.line_bg}
   }
 }
@@ -183,7 +183,7 @@ section.right[8] = {
   DiagnosticError = {
     provider = "DiagnosticError",
     separator = " ",
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.red, nord_colors.line_bg},
     separator_highlight = {nord_colors.bg, nord_colors.bg}
   }
@@ -192,7 +192,7 @@ section.right[9] = {
   DiagnosticWarn = {
     provider = "DiagnosticWarn",
     -- separator = " ",
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.yellow, nord_colors.line_bg},
     separator_highlight = {nord_colors.bg, nord_colors.bg}
   }
@@ -202,7 +202,7 @@ section.right[10] = {
   DiagnosticInfo = {
     -- separator = " ",
     provider = "DiagnosticInfo",
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.green, nord_colors.line_bg},
     separator_highlight = {nord_colors.bg, nord_colors.bg}
   }
@@ -212,7 +212,7 @@ section.right[11] = {
   DiagnosticHint = {
     provider = "DiagnosticHint",
     -- separator = " ",
-    icon = "? ",
+    icon = " ",
     highlight = {nord_colors.blue, nord_colors.line_bg},
     separator_highlight = {nord_colors.bg, nord_colors.bg}
   }
