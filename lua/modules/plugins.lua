@@ -17,6 +17,7 @@ return require('packer').startup(function()
     use { "airblade/vim-rooter", opt = false } -- set project as pwd of vim
     use { 'mhinz/vim-startify', opt = false } -- set project as pwd of vim
     use { 'tpope/vim-commentary', opt = false } -- set project as pwd of vim
+    use { 'akinsho/nvim-toggleterm.lua', opt = false } -- set project as pwd of vim
     use {
       "mhartington/formatter.nvim",
       opt = true,

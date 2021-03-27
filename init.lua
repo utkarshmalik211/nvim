@@ -22,5 +22,6 @@ require('plugins.plug-colorizer') -- vim colorize colour codes
 
 require('plugins.lsp')
 require('plugins.compe')
+require('plugins.toggleterm')
 
 
