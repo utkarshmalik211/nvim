@@ -72,14 +72,11 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
  vim.lsp.diagnostic.on_publish_diagnostics, {
-   underline = false, -- Enable underline, use default values
-   virtual_text = false -- Enable virtual text only on Warning or above, override spacing to 2
+   underline = true, -- Enable underline, use default values
+   virtual_text = true -- Enable virtual text only on Warning or above, override spacing to 2
  }
 )
 
--- nvim_lsp.gopls.setup{
---   cmd = {'/Users/utkarsh-sib/go/bin/gopls', '--remote=auto'},
--- }
 nvim_lsp.gopls.setup{
 	on_attach = on_attach_vim,
     root_dir = nvim_lsp.util.root_pattern('go.mod', '.git');
@@ -93,6 +90,25 @@ nvim_lsp.gopls.setup{
 			staticcheck = true,
 		},
 	},
+}
+
+nvim_lsp.sumneko_lua.setup{
+	on_attach=on_attach_vim,
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT", path = vim.split(package.path, ';'), },
+			completion = { keywordSnippet = "Disable", },
+			diagnostics = { enable = true, globals = {
+				"vim", "describe", "it", "before_each", "after_each" },
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+				}
+			}
+		}
+	}
 }
 vim.cmd[[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)]]
 vim.cmd[[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]]

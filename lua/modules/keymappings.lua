@@ -19,12 +19,15 @@ cmd(':command! W w')
 cmd(':command! Q q')
 
 --  Basic Key Mappings
-
 map('i', '<C-h>', '<C-w>h', options)
 map('i', '<C-j>', '<C-w>j', options)
 map('i', '<C-k>', '<C-w>k', options)
 map('i', '<C-l>', '<C-w>l', options)
 
+
+--  Remove annoying ExMode
+map('n', 'Q','<Nop> ', options)
+map('n', 'q:','<Nop> ', options)
 
 --  Better window navigation
 map('n', '<C-h>', '<C-w>h', options)
@@ -47,7 +50,6 @@ map('i', 'kj', '<Esc>', options)
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
 --  SHIFT-TAB will go back
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
-print('keymaps loaded')
 
 -- nvimtree
 map('n', '<leader>e', ':NvimTreeToggle<CR>', options)
@@ -78,6 +80,7 @@ map('n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>",
 
 --comment stuff out 
 map('v', '<space>/', ':Commentary<CR>', options)
+map('n', '<space>/', ':Commentary<CR>', options)
 
 
 -- toggle telescope.nvim
