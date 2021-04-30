@@ -4,7 +4,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.cmd [[colorscheme onedark]]
+vim.cmd [[colorscheme codedark]]
 
 require('modules.plugins')  -- load plugins
 
