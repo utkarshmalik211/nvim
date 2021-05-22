@@ -18,6 +18,10 @@ return require('packer').startup(function()
     use { 'mhinz/vim-startify', opt = false } -- set project as pwd of vim
     use { 'tpope/vim-commentary', opt = false } -- set project as pwd of vim
     use { 'akinsho/nvim-toggleterm.lua', opt = false } -- set project as pwd of vim
+    use { 'folke/which-key.nvim', config = function()
+         require("which-key").setup {}
+	end
+	}
     use {
       "mhartington/formatter.nvim",
       opt = true,
@@ -59,6 +63,7 @@ return require('packer').startup(function()
      -- sort of like git blame but in floating window
     use { "machakann/vim-sandwich", opt = false } -- surround words with symbol
     use { "fatih/vim-go", opt = false } -- surround words with symbol
+    use { "rust-lang/rust.vim", opt = false } -- surround words with symbol
     use {
       "glacambre/firenvim",
       run = function() vim.fn["firenvim#install"](13) end,

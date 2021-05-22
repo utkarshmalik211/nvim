@@ -40,22 +40,9 @@ map('n', '<C-l>', '<C-w>l', options)
 map('v', '<', '<gv', options)
 map('v', '>', '>gv', options)
 
-
 --  I hate escape more than anything else
 map('i', 'jk', '<Esc>', options)
 map('i', 'kj', '<Esc>', options)
-
-
---  TAB in general mode will move to text buffer
-map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
---  SHIFT-TAB will go back
-map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
-
--- nvimtree
-map('n', '<leader>e', ':NvimTreeToggle<CR>', options)
-map('n', '<leader>r', ':NvimTreeRefresh<CR>', options)
-map('n', '<leader>n', ':NvimTreeFindFile<CR>', options)
-
 
 --  Use alt + hjkl to resize windows
 map('n', '<M-j>',':resize -2<CR>', options)
@@ -63,33 +50,12 @@ map('n', '<M-k>',':resize +2<CR>', options)
 map('n', '<M-h>',':vertical resize -2<CR>', options)
 map('n', '<M-l>',':vertical resize +2<CR>', options)
 
--- lsp key bindings
-options = { noremap = true , silent = true}
-map('n','gd',  '<Cmd> lua vim.lsp.buf.definition() <CR>', options)
-map('n','gD',  '<Cmd> lua vim.lsp.buf.declaration() <CR>', options)
-map('n','gr',  '<Cmd> lua vim.lsp.buf.references() <CR>', options)
-map('n','gi',  '<Cmd> lua vim.lsp.buf.implementation() <CR>', options)
-map('n','ca',  ':Lspsaga code_action<CR>', options)
-map('n', 'K',"<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", options)
-map('n', '<C-k>', '<Cmd> lua vim.lsp.buf.signature_help() <CR>', options)
-map('n', '<C-p>', ':Lspsaga diagnostic_jump_prev<CR>', options)
-map('n', '<C-n>', ':Lspsaga dignostic_jump_next<CR>', options)
-map('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", options)
-map('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", options)
-map('n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", options)
-
 --comment stuff out 
-map('v', '<space>/', ':Commentary<CR>', options)
-map('n', '<space>/', ':Commentary<CR>', options)
-
+-- map('v', '<space>/', ':Commentary<CR>', options)
 
 -- toggle telescope.nvim
 options = { noremap = true }
 
-map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>", options)
-map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", options)
-map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", options)
-map('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", options)
 
 --  Better nav for omnicomplete
 --inoremap <expr> <c-j> ("\<C-n>")

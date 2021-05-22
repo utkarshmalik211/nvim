@@ -4,7 +4,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.cmd [[colorscheme codedark]]
 
 require('modules.plugins')  -- load plugins
 
@@ -18,10 +17,11 @@ require('plugins.vim-rooter') -- load vimrooter
 require('plugins.vim-go') -- vim go config
 require('plugins.lspsaga') -- lspsaga
 require('plugins.plug-colorizer') -- vim colorize colour codes
---require('plugins.telescope') -- vim go config
+require('plugins.which-key') -- vim colorize colour codes
 
 require('plugins.lsp')
 require('plugins.compe')
 require('plugins.toggleterm')
 
-
+vim.cmd [[colorscheme codedark]]
+vim.g.guifont = "CasaydiaCove Nerd Font Regular:h14"
