@@ -1,4 +1,3 @@
--- Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
@@ -8,7 +7,7 @@ return require('packer').startup(function()
         'glepnir/galaxyline.nvim', branch = 'main', config = function() require'plugins.statusline' end,
         requires = {'kyazdani42/nvim-web-devicons'},
     }
-    use { "joshdick/onedark.vim", opt = false } -- nice colorscheme
+    use { "dracula/vim", opt = false } -- nice colorscheme
     use { "tomasiser/vim-code-dark", opt = false } -- nice colorscheme
     use { "windwp/nvim-autopairs", opt = true } -- autopairs brackets, braces etc
     use { "b3nj5m1n/kommentary", opt = true } -- comment stuff easier
@@ -19,7 +18,9 @@ return require('packer').startup(function()
     use { 'tpope/vim-commentary', opt = false } -- set project as pwd of vim
     use { 'akinsho/nvim-toggleterm.lua', opt = false } -- set project as pwd of vim
     use { 'folke/which-key.nvim', config = function()
-         require("which-key").setup {}
+         require("which-key").setup {
+			triggers = {"<leader>"}
+		}
 	end
 	}
     use {

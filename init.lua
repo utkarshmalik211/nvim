@@ -23,5 +23,5 @@ require('plugins.lsp')
 require('plugins.compe')
 require('plugins.toggleterm')
 
-vim.cmd [[colorscheme codedark]]
+vim.cmd [[colorscheme dracula]]
 vim.g.guifont = "CasaydiaCove Nerd Font Regular:h14"
