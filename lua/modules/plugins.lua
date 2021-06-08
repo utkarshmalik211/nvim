@@ -7,7 +7,7 @@ return require('packer').startup(function()
         'glepnir/galaxyline.nvim', branch = 'main', config = function() require'plugins.statusline' end,
         requires = {'kyazdani42/nvim-web-devicons'},
     }
-    use { "dracula/vim", opt = false } -- nice colorscheme
+    use { "Mofiqul/dracula.nvim", opt = false } -- nice colorscheme
     use { "tomasiser/vim-code-dark", opt = false } -- nice colorscheme
     use { "windwp/nvim-autopairs", opt = true } -- autopairs brackets, braces etc
     use { "b3nj5m1n/kommentary", opt = true } -- comment stuff easier
