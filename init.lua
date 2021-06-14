@@ -4,12 +4,14 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.viminfo='100,n$HOME/.config/nvim/viminfo'
 
-require('modules.plugins')  -- load plugins
+
 
 require('modules.keymappings') -- load key bindings
 require('modules.settings') -- load vim settings 
 
+require('modules.plugins')  -- load plugins
 require('plugins.nvimtree') -- load file explorere
 require('plugins.bufferline') -- load top bufferline
 require('plugins.treesitter') -- load top bufferline
