@@ -4,10 +4,6 @@
 local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 
-
--- map the leader key
-map('n', '<Space>', '', {})
-
 options = { noremap = true }
 
 -- Not an editor command: Wqa
@@ -55,7 +51,8 @@ map('n', '<M-l>',':vertical resize +2<CR>', options)
 
 -- toggle telescope.nvim
 options = { noremap = true }
-
+-- esc behaves as esc in terminal mode
+map('t', '<Esc>', '<C-\\><C-n>', options)
 
 --  Better nav for omnicomplete
 --inoremap <expr> <c-j> ("\<C-n>")

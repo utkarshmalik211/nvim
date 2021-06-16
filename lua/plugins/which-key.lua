@@ -17,18 +17,33 @@ wk.register({
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       g = { "<cmd>Telescope live_grep<cr>", "Search" },
       b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+      q = { "<cmd>Telescope quickfix<cr>", "Quick Fix List" },
       n = { "<cmd>enew<cr>", "New File" },
     },
     e = {"<cmd>NvimTreeToggle<CR>", "Open Explorer"},
     r = {"<cmd>NvimTreeRefresh<CR>", "Refresh Explorer"}
+    c = {
+   	 name = "+QuickFix List",
+   	 n = {"<cmd>:cn<CR>", "Next item in QuickFix list"},
+   	 N = {"<cmd>:cp<CR>", "Prev item in QuickFix list"},
+   	 q = {"<cmd>:cclose<CR>", "Close QuickFix list"},
+   	 g = {"<cmd>:cfirst<CR>", "First item in QuickFix list"},
+   	 G = {"<cmd>:clast<CR>", "Last item in QuickFix list"},
+   	 o = {"<cmd>:copen<CR>", "Open QuickFix list"},
+    },
+    t = {
+   	 name = "+Terminal",
+   	 t = {"<cmd>ToggleTerm size=15<CR>", "Toggle Terminal"},
+   	 a = {"<cmd>ADDTERM<CR>", "Open another terminal"}
+    },
   },
   ["<leader>/"] = {"<cmd> Commentary<CR>", "Comment"},
   ["<TAB>"] = {"<cmd> BufferLineCycleNext<CR>", "Next Buffer"},
   ["<S-TAB>"] = {"<cmd> BufferLineCyclePrev<CR>", "Previous Buffer"},
-  ["g"] = {
+  g = {
       name = "+LSP",
       d = { "<cmd> lua require'lspsaga.provider'.preview_definition()<CR>", "Show definition" },
-      D = { "<cmd> lua vim.lsp.buf.declaration() <CR>", "Go to Declaration" },
+      D = { "<cmd> lua vim.lsp.buf.definition() <CR>", "Go to Declaration" },
       r = { "<cmd> lua vim.lsp.buf.references() <CR>", "Show References" },
       i = { "<cmd> lua vim.lsp.buf.implementation() <CR>", "Implementation" },
       h = { "<cmd> lua require'lspsaga.provider'.lsp_finder()<CR>", "LSP Finder" },
