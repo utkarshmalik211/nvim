@@ -1,82 +1,69 @@
-vim.cmd [[packadd nvim-tree.lua]]
-
--- Set some variables
-vim.g.nvim_tree_side = "left"
-vim.g.nvim_tree_width = 30
-vim.g.nvim_tree_ignore = {
-  ".git",
-  "node_modules",
-  "__sapper__",
-  ".routify",
-  "dist",
-  ".cache",
-}
-vim.g.nvim_tree_auto_open = 0
-vim.g.nvim_tree_auto_close = 0
-vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_hide_dotfiles = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_root_folder_modifier = ":~"
-vim.g.nvim_tree_tab_open = 0
-vim.g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
-}
-
--- Mappings for nvimtree
+-- following options are the default
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-vim.g.nvim_tree_bindings = {
-    -- mappings
-    ["<CR>"] = tree_cb("edit"),
-    ["l"] = tree_cb("edit"),
-    ["o"] = tree_cb("edit"),
-    ["<2-LeftMouse>"] = tree_cb("edit"),
-    ["<2-RightMouse>"] = tree_cb("cd"),
-    ["<C-]>"] = tree_cb("cd"),
-    ["v"] = tree_cb("vsplit"),
-    ["s"] = tree_cb("split"),
-    ["<C-t>"] = tree_cb("tabnew"),
-    ["h"] = tree_cb("close_node"),
-    ["<BS>"] = tree_cb("close_node"),
-    ["<S-CR>"] = tree_cb("close_node"),
-    ["<Tab>"] = tree_cb("preview"),
-    ["I"] = tree_cb("toggle_ignored"),
-    ["H"] = tree_cb("toggle_dotfiles"),
-    ["R"] = tree_cb("refresh"),
-    ["a"] = tree_cb("create"),
-    ["d"] = tree_cb("remove"),
-    ["r"] = tree_cb("rename"),
-    ["<C-r>"] = tree_cb("full_rename"),
-    ["x"] = tree_cb("cut"),
-    ["c"] = tree_cb("copy"),
-    ["p"] = tree_cb("paste"),
-    ["[c"] = tree_cb("prev_git_item"),
-    ["]c"] = tree_cb("next_git_item"),
-    ["-"] = tree_cb("dir_up"),
-    ["q"] = tree_cb("close")
-}
--- default will show icon by default if no icon is provided
--- default shows no icon by default
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-
-  git = {
-    unstaged  = "✗",
-    staged    = "✓",
-    unmerged  = "",
-    renamed   = "➜",
-    untracked = "★",
+require'nvim-tree'.setup {
+	
+  disable_netrw       = true,
+  -- hijack netrw window on startup
+  hijack_netrw        = true,
+  -- open the tree when running this setup function
+  open_on_setup       = false,
+  -- will not open on setup if the filetype is in this list
+  ignore_ft_on_setup  = {},
+  -- closes neovim automatically when the tree is the last **WINDOW** in the view
+  auto_close          = false,
+  -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
+  open_on_tab         = false,
+  -- hijack the cursor in the tree to put it at the start of the filename
+  hijack_cursor       = false,
+  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually) 
+  update_cwd          = false,
+  -- show lsp diagnostics in the signcolumn
+  lsp_diagnostics     = true,
+  -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
+  update_focused_file = {
+    -- enables the feature
+    enable      = true,
+    -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
+    -- only relevant when `update_focused_file.enable` is true
+    update_cwd  = true,
+    -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
+    -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
+    ignore_list = {}
   },
-
-  folder = {
-    default    = "",
-    open       = "",
-    empty      = "",
-    empty_open = "",
+  -- configuration options for the system open command (`s` in the tree by default)
+  system_open = {
+    -- the command to run this, leaving nil should work in most cases
+    cmd  = nil,
+    -- the command arguments as a list
+    args = {}
   },
+  -- show lsp diagnostics in the signcolumn
+  diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
+  view = {
+    -- width of the window, can be either a number (columns) or a string in `%`
+    width = 30,
+    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
+    side = 'left',
+    -- if true the tree will resize itself after opening a file
+    auto_resize = false,
+    mappings = {
+      -- custom only false will merge the list with the default mappings
+      -- if true, it will only use your list to set the mappings
+      custom_only = false,
+      -- list of mappings to set on the tree manually
+      list = {
+	    { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+	    { key = "h", cb = tree_cb "close_node" },
+	    { key = "v", cb = tree_cb "vsplit" }, 
+      }
+    }
+  }
 }
-
-vim.g.nvim_tree_indent_marker = 1

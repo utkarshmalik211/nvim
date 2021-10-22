@@ -8,6 +8,7 @@ o.syntax = 'enable'                           		--  Enables syntax highlighing
 o.hidden = true                              		--  Required to keep multiple buffers open multiple buffers
 o.encoding='utf-8'                      		--  The encoding displayed
 o.whichwrap = o.whichwrap .. '<,>,[,],h,l'
+o.swapfile = false
 
 o.pumheight=10                        			--  Makes popup menu smaller
 o.fileencoding='utf-8'                  		--  The encoding written to file

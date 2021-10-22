@@ -43,7 +43,10 @@ return require('packer').startup(function()
       "junegunn/vim-easy-align",
       opt = false,
     } -- easy align using delimiter
-    use { "kyazdani42/nvim-tree.lua", opt = true } -- super fast file tree viewer
+    use {
+	    'kyazdani42/nvim-tree.lua',
+	    requires = 'kyazdani42/nvim-web-devicons',
+    }
     use { "akinsho/nvim-bufferline.lua", opt = true } -- snazzy bufferline
     use { "neovim/nvim-lspconfig", opt = true } -- builtin lsp config
     use { "glepnir/lspsaga.nvim", opt = true } -- better UI for builtin LSP

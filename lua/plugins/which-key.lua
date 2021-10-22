@@ -21,7 +21,7 @@ wk.register({
       n = { "<cmd>enew<cr>", "New File" },
     },
     e = {"<cmd>NvimTreeToggle<CR>", "Open Explorer"},
-    r = {"<cmd>NvimTreeRefresh<CR>", "Refresh Explorer"}
+    r = {"<cmd>NvimTreeRefresh<CR>", "Refresh Explorer"},
     c = {
    	 name = "+QuickFix List",
    	 n = {"<cmd>:cn<CR>", "Next item in QuickFix list"},
@@ -42,8 +42,8 @@ wk.register({
   ["<S-TAB>"] = {"<cmd> BufferLineCyclePrev<CR>", "Previous Buffer"},
   g = {
       name = "+LSP",
-      d = { "<cmd> lua require'lspsaga.provider'.preview_definition()<CR>", "Show definition" },
-      D = { "<cmd> lua vim.lsp.buf.definition() <CR>", "Go to Declaration" },
+      D = { "<cmd> lua require'lspsaga.provider'.preview_definition()<CR>", "Show definition" },
+      d = { "<cmd> lua vim.lsp.buf.definition() <CR>", "Go to Declaration" },
       r = { "<cmd> lua vim.lsp.buf.references() <CR>", "Show References" },
       i = { "<cmd> lua vim.lsp.buf.implementation() <CR>", "Implementation" },
       h = { "<cmd> lua require'lspsaga.provider'.lsp_finder()<CR>", "LSP Finder" },
