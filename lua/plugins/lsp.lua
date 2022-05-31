@@ -40,8 +40,8 @@ local on_attach_vim = function()
 
 	protocol.CompletionItemKind = {
 		'?';             -- Text          = 1;
-		'Ä';             -- Method        = 2;
-		'Ä';             -- Function      = 3;
+		'Ã„';             -- Method        = 2;
+		'Ã„';             -- Function      = 3;
 		'?';             -- Constructor   = 4;
 		'?';            -- Field         = 5;
 		'??';             -- Variable      = 6;

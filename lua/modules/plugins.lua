@@ -3,10 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
-    use {
-        'glepnir/galaxyline.nvim', branch = 'main', config = function() require'plugins.statusline' end,
-        requires = {'kyazdani42/nvim-web-devicons'},
-    }
+    use {'feline-nvim/feline.nvim', config = function() require'plugins.statusline' end }
     use { "folke/tokyonight.nvim", opt = false } -- nice colorscheme
     use { "tomasiser/vim-code-dark", opt = false } -- nice colorscheme
     use { "windwp/nvim-autopairs", opt = true } -- autopairs brackets, braces etc
@@ -28,6 +25,7 @@ return require('packer').startup(function()
       opt = true,
       cmd = "Format",
     } -- helper for fast formatting
+    use { "ThePrimeagen/harpoon", opt = true}
     use { "norcalli/nvim-colorizer.lua", opt = true } -- colorize hex/rgb/hsl value
     use {
       "nvim-treesitter/nvim-treesitter",
@@ -63,11 +61,15 @@ return require('packer').startup(function()
         { "nvim-telescope/telescope-frecency.nvim" }, -- media preview
       },
     } -- extensible fuzzy finder
-    use { "lewis6991/gitsigns.nvim", opt = true } -- show git stuff in signcolumn
-     -- sort of like git blame but in floating window
+    use { "lewis6991/gitsigns.nvim", 
+	-- need this here other wise cant init
+	config = function() require('gitsigns').setup() end
+    } -- show git stuff in signcolumn
+    -- sort of like git blame but in floating window
     use { "machakann/vim-sandwich", opt = false } -- surround words with symbol
     use { "fatih/vim-go", opt = false } -- surround words with symbol
     use { "rust-lang/rust.vim", opt = false } -- surround words with symbol
+    use { "L3MON4D3/LuaSnip", opt= false} -- snips
     use {
       "glacambre/firenvim",
       run = function() vim.fn["firenvim#install"](13) end,

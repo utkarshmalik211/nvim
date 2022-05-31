@@ -5,7 +5,7 @@ vim.cmd [[packadd nvim-bufferline.lua]]
 
 local options = {
   show_buffer_close_icons = false,
-  separator_style         = { "|", "" },
+  separator_style         = { "|", ""},
   diagnostics             = "nvim_lsp",
   buffer_close_icon       = "",
 }
