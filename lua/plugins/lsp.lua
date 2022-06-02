@@ -4,20 +4,6 @@ vim.cmd [[packadd lspsaga.nvim]]
 
 local nvim_lsp = require("lspconfig")
 local protocol = require'vim.lsp.protocol'
---local mappings = require("modules.lsp._mappings")
---local is_cfg_present = require("modules._util").is_cfg_present
-
---require("modules.lsp._diagnostic")
-require("lspsaga").init_lsp_saga({
-  border_style = 1,
-  code_action_prompt = {
-     enable = true,
-     sign = true,
-     sign_priority = 20,
-     virtual_text = false,
-   },
-})
-
 
 --- Document highlights
 local function document_highlight()
@@ -85,9 +71,13 @@ nvim_lsp.gopls.setup{
 	settings = {
 		gopls = {
 			analyses = {
-				unusedparams = true,
+		            nilness = true,
+			    shadow = true,
+			    unusedparams = true,
+			    unusewrites = true,			
 			},
 			staticcheck = true,
+			usePlaceholders = true,
 		},
 	},
 }

@@ -1,5 +1,4 @@
-local popup = require("plenary.popup")
-local v = require 'semver'
+local v = require('modules.semver')
 local Automation = {}
 
 function Automation.GitPush()
@@ -20,13 +19,11 @@ function Automation.ReleaseTag()
 	print("Pull latest: " .. Automation.execCommand("git checkout dev && git pull origin dev && git checkout main && git pull origin main") .. "\n")
 	-- merge dev
 	print("Merge: " .. Automation.execCommand("git merge dev --no-ff -X thiers --no-edit") .. "\n")
-	local lastTag = Automation.execCommand("git describe --tags --abbrev=0")
-	local newTag = v(lastTag):nextPatch()
-	print("Stash: " .. Automation.execCommand("git tag v"..tag))
-end
-
-function Automation.incrementTag(lastTag)
-	local tag = split(lastTag, ".")	
+	local lastTag = Automation.execCommand("git describe --tags $(git rev-list --tags --max-count=1)")
+	local newTag = v(lastTag:sub(2)):nextPatch()
+	print("Create tag: " .. Automation.execCommand("git tag v"..newTag))
+	print("Push: " .. Automation.execCommand("git push origin v"..newTag.." && git push origin main"))
+	print("Back to current: " .. Automation.execCommand("git checkout "..currBranch.." && git stast pop"))
 end
 
 function Automation.execCommand(command)

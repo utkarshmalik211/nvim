@@ -23,7 +23,7 @@ require('plugins.which-key') 	-- vim which key
 require('plugins.gitsigns') 	-- vim gitsigns
 
 require('plugins.lsp')
-require('plugins.compe')
+require('plugins.completions')
 require('plugins.toggleterm')
 
 require('modules.theme')

@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local automations = require("modules.automations")
 opts = {
   mode = "n", -- NORMAL mode
   -- prefix: use "<leader>f" for example for mapping everything related to finding files

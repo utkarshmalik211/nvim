@@ -48,7 +48,8 @@ return require('packer').startup(function()
     use { "akinsho/nvim-bufferline.lua", opt = true } -- snazzy bufferline
     use { "neovim/nvim-lspconfig", opt = true } -- builtin lsp config
     use { "glepnir/lspsaga.nvim", opt = true } -- better UI for builtin LSP
-    use { "hrsh7th/nvim-compe", opt = true } -- better UI for builtin LSP
+    use { "hrsh7th/nvim-cmp", opt = true } -- better UI for builtin LSP
+    use { "hrsh7th/cmp-nvim-lsp", opt = true } -- better UI for builtin LSP
     use { "windwp/nvim-ts-autotag", opt = true } -- auto-close html tag
     use {
       "nvim-telescope/telescope.nvim",
