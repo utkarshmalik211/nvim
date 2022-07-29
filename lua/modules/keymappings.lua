@@ -4,7 +4,7 @@
 local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 
-options = { noremap = true }
+local options = { noremap = true }
 
 -- Not an editor command: Wqa
 cmd(':command! WQ wq')
@@ -22,8 +22,8 @@ map('i', '<C-l>', '<C-w>l', options)
 
 
 --  Remove annoying ExMode
-map('n', 'Q','<Nop> ', options)
-map('n', 'q:','<Nop> ', options)
+map('n', 'Q', '<Nop> ', options)
+map('n', 'q:', '<Nop> ', options)
 
 --  Better window navigation
 map('n', '<C-h>', '<C-w>h', options)
@@ -41,12 +41,12 @@ map('i', 'jk', '<Esc>', options)
 map('i', 'kj', '<Esc>', options)
 
 --  Use alt + hjkl to resize windows
-map('n', '<M-j>',':resize -2<CR>', options)
-map('n', '<M-k>',':resize +2<CR>', options)
-map('n', '<M-h>',':vertical resize -2<CR>', options)
-map('n', '<M-l>',':vertical resize +2<CR>', options)
+map('n', '<M-j>', ':resize -2<CR>', options)
+map('n', '<M-k>', ':resize +2<CR>', options)
+map('n', '<M-h>', ':vertical resize -2<CR>', options)
+map('n', '<M-l>', ':vertical resize +2<CR>', options)
 
---comment stuff out 
+--comment stuff out
 -- map('v', '<space>/', ':Commentary<CR>', options)
 
 -- toggle telescope.nvim
@@ -89,5 +89,3 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 --inoremap <C-k> <C-\><C-N><C-w>k
 --inoremap <C-l> <C-\><C-N><C-w>l
 --tnoremap <Esc> <C-\><C-n>
-
-
