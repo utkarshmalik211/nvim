@@ -163,6 +163,11 @@ _G.packer_plugins = {
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -208,11 +213,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
-  },
-  ["vim-code-dark"] = {
-    loaded = true,
-    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/vim-code-dark",
-    url = "https://github.com/tomasiser/vim-code-dark"
   },
   ["vim-fugitive"] = {
     loaded = true,

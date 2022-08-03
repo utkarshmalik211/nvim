@@ -28,3 +28,4 @@ require('plugins.luasnips') -- load code snippets
 require('plugins.toggleterm')
 
 require('modules.theme')
+require('modules.functions')

@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 	use { "nvim-telescope/telescope-frecency.nvim" } -- media preview
 	use { "kyazdani42/nvim-web-devicons" }
 	use { 'feline-nvim/feline.nvim', config = function() require 'plugins.statusline' end }
-	use { "tomasiser/vim-code-dark", opt = false } -- nice colorscheme
+	use { "navarasu/onedark.nvim", opt = false } -- nice colorscheme
 	use { "b3nj5m1n/kommentary", opt = true } -- comment stuff easier
 	use { "tpope/vim-fugitive", opt = false } -- git helpers inside neovim
 	use { "airblade/vim-rooter", opt = false } -- set project as pwd of vim
@@ -36,5 +36,4 @@ return require('packer').startup(function(use)
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'rafamadriz/friendly-snippets' }
 	use { 'saadparwaiz1/cmp_luasnip' }
-	use { "rafamadriz/friendly-snippets" }
 end)
