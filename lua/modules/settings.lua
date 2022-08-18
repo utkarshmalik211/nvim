@@ -33,6 +33,10 @@ o.scrolloff = 7
 o.sidescrolloff = 7
 o.laststatus = 3
 o.smarttab = true --  Makes tabbing smarter will realize you have 2 vs 4
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldnestmax = 10
+o.foldlevel = 9
 
 opt.undodir = "/Users/utkarshmalik/.config/nvim/.undo"
 opt.undofile = true
@@ -47,6 +51,7 @@ wo.relativenumber = true --  Line numbers
 wo.cursorline = true --  Enable highlighting of the current line
 
 bo.tabstop = 4 --  Insert 2 spaces for a tab
+bo.softtabstop = 4 --  Insert 2 spaces for a tab
 bo.shiftwidth = 4 --  Change the number of space characters inserted for indentation
 bo.expandtab = true --  Converts tabs to spaces
 bo.smartindent = true --  Makes indenting smart

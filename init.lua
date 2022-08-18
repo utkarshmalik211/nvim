@@ -29,3 +29,4 @@ require('plugins.toggleterm')
 
 require('modules.theme')
 require('modules.functions')
+require('modules.augroups')

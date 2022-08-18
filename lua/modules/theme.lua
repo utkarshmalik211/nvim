@@ -1,4 +1,6 @@
+local colors = require("onedark.palette").darker
 require('onedark').setup {
+	highlight_linenumber = true,
 	style = 'darker',
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
@@ -21,7 +23,9 @@ require('onedark').setup {
 
 	-- Custom Highlights --
 	colors = {}, -- Override default colors
-	highlights = {}, -- Override highlight groups
+	highlights = {
+		Folded = { fg = colors.grey, bg = colors.bg0, fmt = 'italic' },
+	}, -- Override highlight groups
 
 	-- Plugins Config --
 	diagnostics = {
