@@ -27,3 +27,16 @@ vim.api.nvim_create_autocmd("BufRead", {
 	end,
 	group = goerr_augroup,
 })
+
+
+local gotest_augroup = vim.api.nvim_create_augroup("Go-Test", { clear = true })
+vim.api.nvim_create_autocmd("BufWrite", {
+	pattern = "*.go",
+	callback = function()
+		if vim.api.nvim_buf_get_var(0, "errfolded") == false then
+			vim.cmd('g/if err != nil {/silent execute("normal zcgg")')
+		end
+		vim.api.nvim_buf_set_var(0, "errfolded", true)
+	end,
+	group = gotest_augroup,
+})
