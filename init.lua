@@ -9,10 +9,10 @@ vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
 
 
-require('modules.keymappings') -- load key bindings
-require('modules.settings') -- load vim settings 
+require('config.keymappings') -- load key bindings
+require('config.settings') -- load vim settings 
 
-require('modules.plugins') -- load plugins
+require('config.plugins') -- load plugins
 
 require('plugins.nvimtree') -- load file explorere
 require('plugins.treesitter') -- load treesitter
@@ -27,6 +27,6 @@ require('plugins.lsp')
 require('plugins.luasnips') -- load code snippets
 require('plugins.toggleterm')
 
-require('modules.theme')
-require('modules.functions')
-require('modules.augroups')
+require('config.theme')
+require('custom.functions')
+require('custom.augroups')

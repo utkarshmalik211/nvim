@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 	use { 'folke/which-key.nvim' }
 	use { "norcalli/nvim-colorizer.lua", opt = true } -- colorize hex/rgb/hsl value
 	use { "nvim-treesitter/nvim-treesitter", opt = true, run = ':TSUpdate', } -- mostly for better syntax highlighting, but it has more stuff
+	use { "nvim-treesitter/nvim-treesitter-context", opt = true }
 	use { 'kyazdani42/nvim-tree.lua' }
 	use { "nvim-telescope/telescope.nvim", opt = false, } -- extensible fuzzy finder
 	use { "lewis6991/gitsigns.nvim" } -- show git stuff in signcolumn

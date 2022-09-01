@@ -158,6 +158,12 @@ _G.packer_plugins = {
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
