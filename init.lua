@@ -17,7 +17,6 @@ require('config.plugins') -- load plugins
 require('plugins.nvimtree') -- load file explorere
 require('plugins.treesitter') -- load treesitter
 require('plugins.vim-rooter') -- load vimrooter 
-require('plugins.vim-go') -- vim go config
 require('plugins.plug-colorizer') -- vim colorize colour codes
 require('plugins.which-key') -- vim which key
 require('plugins.gitsigns') -- vim gitsigns
@@ -30,3 +29,5 @@ require('plugins.toggleterm')
 require('config.theme')
 require('custom.functions')
 require('custom.augroups')
+
+vim.g.hardtime_default_on = 1

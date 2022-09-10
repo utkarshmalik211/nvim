@@ -1,32 +1,45 @@
 -- err folding
 require("custom.go-err")
-local goerr_augroup = vim.api.nvim_create_augroup("Go-err", { clear = true })
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*.go",
-	callback = function()
-		if vim.api.nvim_buf_get_var(0, "errfolded") == false then
-			vim.cmd('g/if err != nil {/silent execute("normal zcgg")')
-		end
-		vim.api.nvim_buf_set_var(0, "errfolded", true)
-	end,
-	group = goerr_augroup,
-})
+local gofmt_augroup = vim.api.nvim_create_augroup("Go-Formats", { clear = true })
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		if vim.api.nvim_buf_get_var(0, "errfolded") == false then
+-- 			vim.cmd('g/if err != nil {/silent execute("normal zcgg")')
+-- 		end
+-- 		vim.api.nvim_buf_set_var(0, "errfolded", true)
+-- 	end,
+-- 	group = goerr_augroup,
+-- })
+--
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		vim.opt.foldtext = 'v:lua.GoErrFoldTxt()'
+-- 	end,
+-- 	group = goerr_augroup,
+-- })
+--
+-- vim.api.nvim_create_autocmd("BufRead", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		vim.api.nvim_buf_set_var(0, "errfolded", false)
+-- 		vim.cmd("setlocal fillchars=fold:\\ ")
+-- 	end,
+-- 	group = goerr_augroup,
+-- })
 
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*.go",
 	callback = function()
-		vim.opt.foldtext = 'v:lua.GoErrFoldTxt()'
+		vim.fn.jobstart("goimports -w .", {
+			on_exit = function()
+				vim.cmd("e")
+			end
+		}
+		)
 	end,
-	group = goerr_augroup,
-})
-
-vim.api.nvim_create_autocmd("BufRead", {
-	pattern = "*.go",
-	callback = function()
-		vim.api.nvim_buf_set_var(0, "errfolded", false)
-		vim.cmd("setlocal fillchars=fold:\\ ")
-	end,
-	group = goerr_augroup,
+	group = gofmt_augroup,
 })
 
 
@@ -180,5 +193,5 @@ local attach_to_buffer = function(bufnr, command)
 end
 
 -- attach_to_buffer(80, { "go", "run", "main.go" })
-attach_to_buffer(16, { "go", "test", "./...", "-v", "-json" })
+-- attach_to_buffer(16, { "go", "test", "./...", "-v", "-json" })
 -- attach_to_buffer(1, { "go", "test", "./...", "-v", "-json", "-run", "TestDoesFailStill" })

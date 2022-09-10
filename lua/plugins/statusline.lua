@@ -1,8 +1,3 @@
--- require("feline").setup {
---
--- }
--- require('feline').winbar.setup {}
---
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
 

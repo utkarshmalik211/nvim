@@ -120,11 +120,10 @@ _G.packer_plugins = {
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  kommentary = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/kommentary",
-    url = "https://github.com/b3nj5m1n/kommentary"
+  harpoon = {
+    loaded = true,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -180,6 +179,12 @@ _G.packer_plugins = {
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  playground = {
+    loaded = false,
+    needs_bufread = true,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -189,6 +194,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ripgrep = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/ripgrep",
+    url = "https://github.com/BurntSushi/ripgrep"
   },
   ["rust.vim"] = {
     loaded = true,
@@ -225,10 +236,11 @@ _G.packer_plugins = {
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
+  ["vim-hardtime"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/vim-hardtime",
+    url = "https://github.com/takac/vim-hardtime"
   },
   ["vim-rooter"] = {
     loaded = true,
@@ -239,14 +251,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/start/vim-sandwich",
     url = "https://github.com/machakann/vim-sandwich"
-  },
-  ["vim-sayonara"] = {
-    commands = { "Sayonara" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/utkarshmalik/.local/share/nvim/site/pack/packer/opt/vim-sayonara",
-    url = "https://github.com/mhinz/vim-sayonara"
   },
   ["which-key.nvim"] = {
     loaded = true,
@@ -260,12 +264,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for feline.nvim]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.statusline\frequire\0", "config", "feline.nvim")
 time([[Config for feline.nvim]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 if should_profile then save_profiles() end
 
 end)

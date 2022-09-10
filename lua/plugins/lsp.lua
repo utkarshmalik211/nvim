@@ -91,6 +91,7 @@ nvim_lsp.gopls.setup {
 				unusewrites = true,
 			},
 			staticcheck = true,
+			gofumpt = true,
 			usePlaceholders = true,
 		},
 	},
