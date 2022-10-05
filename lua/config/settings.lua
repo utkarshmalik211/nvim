@@ -18,7 +18,6 @@ o.splitbelow = true --  Horizontal splits will automatically be below
 o.splitright = true --  Vertical splits will automatically be to the right
 -- o.t_Co='256'                            		--  Support 256 colors
 o.autoindent = true --  Good auto indent
-o.laststatus = 2 --  Always display the status line
 o.background = 'dark' --  tell vim what the background color looks like
 o.showtabline = 1 --  Always show tabs
 o.showmode = false --  We don't need to see things like -- INSERT -- anymore
@@ -37,6 +36,8 @@ o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldnestmax = 10
 o.foldlevel = 9
+o.autoread = true
+o.cmdheight = 0
 
 opt.undodir = "/Users/utkarshmalik/.config/nvim/.undo"
 opt.undofile = true

@@ -20,7 +20,6 @@ map('i', '<C-j>', '<C-w>j', options)
 map('i', '<C-k>', '<C-w>k', options)
 map('i', '<C-l>', '<C-w>l', options)
 
-
 --  Remove annoying ExMode
 map('n', 'Q', '<Nop> ', options)
 map('n', 'q:', '<Nop> ', options)

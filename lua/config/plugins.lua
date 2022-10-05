@@ -33,18 +33,25 @@ return require('packer').startup(function(use)
 	use { 'rafamadriz/friendly-snippets' }
 	use { 'saadparwaiz1/cmp_luasnip' }
 
-	use { 'ThePrimeagen/harpoon', opt = true }
+	-- dap for dabs
+	use { 'mfussenegger/nvim-dap' }
+	use { 'nvim-telescope/telescope-dap.nvim' } -- media preview
+	use { 'rcarriga/nvim-dap-ui' }
 
-	use { 'kyazdani42/nvim-tree.lua', opt = true }
+	-- the new way to navigate
+	use { 'ThePrimeagen/harpoon', opt = false }
+
+	use { 'folke/trouble.nvim', opt = false }
+	use { 'kyazdani42/nvim-tree.lua', opt = false }
 	use { 'machakann/vim-sandwich', opt = true } -- surround words with symbol
 	use { 'rust-lang/rust.vim', opt = true } -- surround words with symbol
-	use { 'akinsho/nvim-toggleterm.lua', opt = true } -- set project as pwd of vim
-	use { 'tpope/vim-fugitive', opt = true } -- git helpers inside neovim
+	use { 'akinsho/nvim-toggleterm.lua', opt = false } -- set project as pwd of vim
+	use { 'tpope/vim-fugitive', opt = false } -- git helpers inside neovim
 	use { 'lewis6991/gitsigns.nvim' } -- show git stuff in signcolumn
-	use { 'feline-nvim/feline.nvim', config = function() require 'plugins.statusline' end }
-	use { 'navarasu/onedark.nvim', opt = false } -- nice colorscheme
+	-- use { 'feline-nvim/feline.nvim', config = function() require 'plugins.statusline' end }
+	use { 'nvim-lualine/lualine.nvim', config = function() require 'plugins.statusline' end } -- nice line
+	use { 'catppuccin/nvim', as = "catppuccin", opt = false } -- nice colorscheme
 	use { 'airblade/vim-rooter', opt = false } -- set project as pwd of vim
-	use { 'folke/trouble.nvim', opt = false }
 	use { 'folke/which-key.nvim', opt = false }
 	use { 'norcalli/nvim-colorizer.lua', opt = true } -- colorize hex/rgb/hsl value
 	use { 'takac/vim-hardtime' }

@@ -21,7 +21,7 @@ wk.register({
 			q = { "<cmd>Telescope quickfix<cr>", "Quick Fix List" },
 			n = { "<cmd>enew<cr>", "New File" },
 		},
-		e = { "<cmd>NvimTreeToggle<CR> <cmd>lua print('DONT USE TREE')<CR>", "Open Explorer" },
+		e = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon UI" },
 		r = { "<cmd>NvimTreeRefresh<CR>", "Refresh Explorer" },
 		c = {
 			name = "+QuickFix List",
@@ -64,10 +64,11 @@ wk.register({
 	["K"]        = { function() vim.lsp.buf.hover() end, "Hover" },
 	["<C-p>"]    = { function() vim.diagnostic.goto_prev() end, "Previous Error" },
 	["<C-n>"]    = { function() vim.diagnostic.goto_next() end, "Previous Error" },
+	["<C-e>"]    = { "<cmd>lua print('😴 ')<CR> <cmd>2sleep | NvimTreeToggle<CR> ",
+		"Open Explorer" },
 	-- harpoon bindings
-	["<C-e>"]    = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon UI" },
 	["<C-1>"]    = { function() require("harpoon.ui").nav_file(1) end, "Go to file 1" },
-	["<C-2>"]    = { function() require("harpoon.ui").nav_file(2) end, "Go to file 1" },
-	["<C-3>"]    = { function() require("harpoon.ui").nav_file(3) end, "Go to file 1" },
-	["<C-4>"]    = { function() require("harpoon.ui").nav_file(4) end, "Go to file 1" },
+	["<C-2>"]    = { function() require("harpoon.ui").nav_file(2) end, "Go to file 2" },
+	["<C-3>"]    = { function() require("harpoon.ui").nav_file(3) end, "Go to file 3" },
+	["<C-4>"]    = { function() require("harpoon.ui").nav_file(4) end, "Go to file 4" },
 }, opts)
