@@ -1,6 +1,6 @@
 -- err folding
 require("custom.go-err")
-local ts_utils = require 'nvim-treesitter.ts_utils'
+-- local ts_utils = require 'nvim-treesitter.ts_utils'
 local gofmt_augroup = vim.api.nvim_create_augroup("Go-Formats", { clear = true })
 -- vim.api.nvim_create_autocmd("BufEnter", {
 -- 	pattern = "*.go",
@@ -91,7 +91,7 @@ local find_test_names = function(state)
 	for id, node in query:iter_captures(root, state.bufnr, 0, -1) do
 		if id == 1 then
 			local range = { node:range() }
-			local testname = ts_utils.get_node_text(node)[1]
+			local testname = vim.treesitter.get_node_text(node)[1]
 			state.tests[testname] = {
 				line = range[1],
 				name = testname,

@@ -8,23 +8,17 @@ vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
 
-
 require('config.keymappings') -- load key bindings
-require('config.settings') -- load vim settings 
+require('config.settings') -- load vim settings
 
 require('config.plugins') -- load plugins
 
-require('plugins.nvimtree') -- load file explorere
-require('plugins.treesitter') -- load treesitter
-require('plugins.vim-rooter') -- load vimrooter 
 require('plugins.plug-colorizer') -- vim colorize colour codes
 require('plugins.which-key') -- vim which key
-require('plugins.gitsigns') -- vim gitsigns
 
 require('plugins.completions')
 require('plugins.lsp')
 require('plugins.luasnips') -- load code snippets
-require('plugins.toggleterm')
 
 require('config.theme')
 require('custom.functions')
