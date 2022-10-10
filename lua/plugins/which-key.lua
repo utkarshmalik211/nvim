@@ -2,8 +2,6 @@ local wk = require("which-key")
 -- local automations = require("modules.automations")
 local opts = {
 	mode = "n", -- NORMAL mode
-	-- prefix: use "<leader>f" for example for mapping everything related to finding files
-	-- the prefix is prepended to every mapping part of `mappings`
 	prefix = "",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
@@ -12,18 +10,21 @@ local opts = {
 }
 wk.register({
 	["<leader>"] = {
+		b = {
+			name = "+buffers",
+			l = { "<cmd>Telescope buffers<cr>", "Buffers" },
+		},
 		f = {
 			name = "+file",
 			f = { "<cmd>Telescope find_files<cr>", "Find File" },
 			r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 			g = { "<cmd>Telescope live_grep<cr>", "Search" },
-			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 			q = { "<cmd>Telescope quickfix<cr>", "Quick Fix List" },
 			n = { "<cmd>enew<cr>", "New File" },
 		},
 		e = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon UI" },
 		r = { "<cmd>NvimTreeRefresh<CR>", "Refresh Explorer" },
-		c = {
+		q = {
 			name = "+QuickFix List",
 			n = { "<cmd>:cn<CR>", "Next item in QuickFix list" },
 			N = { "<cmd>:cp<CR>", "Prev item in QuickFix list" },

@@ -117,10 +117,10 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 nvim_lsp.pyright.setup {}
-vim.cmd [[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+vim.cmd [[autocmd BufWritePre *.rs lua vim.lsp.buf.format({}, 1000)]]
+vim.cmd [[autocmd BufWritePre *.py lua vim.lsp.buf.format({}, 1000)]]
+vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.format({}, 1000)]]
+vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.format({}, 1000)]]
 
 --------------TROUBLE config---------------------------
 require("trouble").setup {

@@ -16,7 +16,6 @@ o.fileencoding = 'utf-8' --  The encoding written to file
 o.ruler = true --  Show the cursor position all the time
 o.splitbelow = true --  Horizontal splits will automatically be below
 o.splitright = true --  Vertical splits will automatically be to the right
--- o.t_Co='256'                            		--  Support 256 colors
 o.autoindent = true --  Good auto indent
 o.background = 'dark' --  tell vim what the background color looks like
 o.showtabline = 1 --  Always show tabs
@@ -50,10 +49,12 @@ wo.signcolumn = 'yes' --  Always show the signcolumn, otherwise it would shift t
 wo.number = true --  Line numbers
 wo.relativenumber = true --  Line numbers
 wo.cursorline = true --  Enable highlighting of the current line
+opt.mouse = ""
 
 bo.tabstop = 4 --  Insert 2 spaces for a tab
 bo.softtabstop = 4 --  Insert 2 spaces for a tab
 bo.shiftwidth = 4 --  Change the number of space characters inserted for indentation
 bo.expandtab = true --  Converts tabs to spaces
 bo.smartindent = true --  Makes indenting smart
-bo.formatoptions = bo.formatoptions:gsub('cro', '') -- Stop newline continution of comments
+
+bo.formatoptions = bo.formatoptions:gsub('cro', '') -- Stop newline continution of commenaaaaats
