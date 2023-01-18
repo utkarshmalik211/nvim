@@ -12,7 +12,7 @@ require('lualine').setup {
 		always_divide_middle = true,
 		globalstatus = true,
 		refresh = {
-			statusline = 1200,
+			statusline = 900,
 			tabline = 1200,
 			winbar = 1200,
 		}
@@ -21,7 +21,7 @@ require('lualine').setup {
 		lualine_a = { 'mode' },
 		lualine_b = { 'branch', 'diff', 'diagnostics' },
 		lualine_c = { 'filename' },
-		lualine_x = { 'encoding', 'fileformat', 'filetype' },
+		lualine_x = {},
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' }
 	},

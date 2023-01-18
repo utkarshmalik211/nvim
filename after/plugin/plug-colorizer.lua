@@ -1,4 +1,4 @@
-vim.cmd [[packadd nvim-colorizer.lua]]
+-- vim.cmd [[packadd nvim-colorizer.lua]]
 require("colorizer").setup {
   ["*"] = {
     css = true,

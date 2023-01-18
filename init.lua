@@ -13,15 +13,7 @@ require('config.settings') -- load vim settings
 
 require('config.plugins') -- load plugins
 
-require('plugins.plug-colorizer') -- vim colorize colour codes
-require('plugins.which-key') -- vim which key
-
-require('plugins.completions')
-require('plugins.lsp')
-require('plugins.luasnips') -- load code snippets
 
 require('config.theme')
 require('custom.functions')
 require('custom.augroups')
-
-vim.g.hardtime_default_on = 1

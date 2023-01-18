@@ -1,6 +1,6 @@
-vim.cmd [[packadd nvim-lspconfig]]
-vim.cmd [[packadd trouble.nvim]]
-vim.cmd [[packadd cmp-nvim-lsp]]
+-- vim.cmd [[packadd nvim-lspconfig]]
+-- vim.cmd [[packadd trouble.nvim]]
+-- vim.cmd [[packadd cmp-nvim-lsp]]
 
 local nvim_lsp = require("lspconfig")
 local protocol = require 'vim.lsp.protocol'
@@ -68,7 +68,7 @@ if not status_ok then
 	return
 end
 
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
