@@ -67,7 +67,7 @@ function ConfigWhichKey()
 		["K"]        = { function() vim.lsp.buf.hover() end, "Hover" },
 		["<C-p>"]    = { function() vim.diagnostic.goto_prev() end, "Previous Error" },
 		["<C-n>"]    = { function() vim.diagnostic.goto_next() end, "Previous Error" },
-		["<C-e>"]    = { vim.cmd.Ex, "Open Explorer" },
+		["<C-e>"]    = { vim.cmd.Lex, "Open Explorer" },
 		-- harpoon bindings
 		["<C-1>"]    = { function() require("harpoon.ui").nav_file(1) end, "Go to file 1" },
 		["<C-2>"]    = { function() require("harpoon.ui").nav_file(2) end, "Go to file 2" },

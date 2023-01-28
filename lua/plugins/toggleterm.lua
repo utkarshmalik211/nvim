@@ -20,4 +20,4 @@ function ConfigToggleTerm()
 
 end
 
-return { 'akinsho/nvim-toggleterm.lua', lazy = false, config = ConfigToggleTerm }
+return { 'akinsho/nvim-toggleterm.lua', config = ConfigToggleTerm, cmd = "ToggleTerm" }

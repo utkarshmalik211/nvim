@@ -99,6 +99,5 @@ return { 'hrsh7th/nvim-cmp',
 		{ 'hrsh7th/cmp-cmdline' },
 		{ 'j-hui/fidget.nvim' }
 	},
-	lazy = false,
 	config = ConfigCompletions,
 }

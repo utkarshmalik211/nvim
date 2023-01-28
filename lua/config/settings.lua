@@ -2,6 +2,7 @@ local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
 local opt = vim.opt
+local g = vim.g
 
 o.termguicolors = true
 o.syntax = 'enable' --  Enables syntax highlighing
@@ -58,3 +59,11 @@ bo.expandtab = true --  Converts tabs to spaces
 bo.smartindent = true --  Makes indenting smart
 
 bo.formatoptions = bo.formatoptions:gsub('cro', '') -- Stop newline continution of commenaaaaats
+
+-----------------------------------------------------------------------------------
+---------------------------netrw config--------------------------------------------
+g.netrw_liststyle = 3
+g.netrw_banner = 0
+g.netrw_browse_split = 4
+g.netrw_altv = 1
+g.netrw_winsize = 25

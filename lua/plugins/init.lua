@@ -10,14 +10,13 @@ local plugins = {
 	{ 'rcarriga/nvim-dap-ui' },
 
 	-- the new way to navigate
-	{ 'ThePrimeagen/harpoon', lazy = false },
+	{ 'ThePrimeagen/harpoon', event = "VeryLazy" },
 
 	{ 'machakann/vim-sandwich', event = { "InsertEnter" } },
 	{ 'rust-lang/rust.vim', ft = { "rs" } },
 	{ 'tpope/vim-fugitive', cmd = { "Git", "G" } }, -- git helpers inside neovim
-	{ 'catppuccin/nvim', name = "catppuccin", lazy = false }, -- nice colorscheme
+	{ 'catppuccin/nvim', name = "catppuccin", config = function() require("catppuccin").setup() end, lazy = false }, -- nice colorscheme
 	{ 'airblade/vim-rooter', cmd = { "Rooter", "RooterToggle" } }, -- set project as pwd of vim
-	{ 'norcalli/nvim-colorizer.lua' }, -- colorize hex/rgb/hsl value
 }
 
 return plugins
