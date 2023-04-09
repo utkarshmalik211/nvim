@@ -30,15 +30,12 @@ function ConfigTelescope()
 				i = {
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
-
 					["<CR>"]  = actions.select_default + actions.center,
 					["<C-v>"] = actions.select_vertical,
 					["<C-x>"] = actions.select_horizontal,
 					["<C-t>"] = actions.select_tab,
-
 					["<C-c>"] = actions.close,
 					["<Esc>"] = actions.close,
-
 					["<C-u>"] = actions.preview_scrolling_up,
 					["<C-d>"] = actions.preview_scrolling_down,
 					["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
@@ -53,10 +50,8 @@ function ConfigTelescope()
 					["<C-x>"] = actions.select_horizontal,
 					["<C-t>"] = actions.select_tab,
 					["<Esc>"] = actions.close,
-
-					["j"] = actions.move_selection_next,
-					["k"] = actions.move_selection_previous,
-
+					["j"]     = actions.move_selection_next,
+					["k"]     = actions.move_selection_previous,
 					["<C-u>"] = actions.preview_scrolling_up,
 					["<C-d>"] = actions.preview_scrolling_down,
 					["<C-q>"] = actions.send_to_qflist,
@@ -93,13 +88,14 @@ function ConfigTelescope()
 	})
 end
 
-return { 'nvim-telescope/telescope.nvim',
+return {
+	'nvim-telescope/telescope.nvim',
 	dependencies = {
-		{ 'BurntSushi/ripgrep', lazy = true },
-		{ 'nvim-telescope/telescope-fzy-native.nvim', lazy = true }, -- fast search algo
+		{ 'BurntSushi/ripgrep',                        lazy = true },
+		{ 'nvim-telescope/telescope-fzy-native.nvim',  lazy = true }, -- fast search algo
 		{ 'nvim-telescope/telescope-media-files.nvim', lazy = true }, -- media preview
-		{ 'nvim-telescope/telescope-frecency.nvim', lazy = true },
-		{ 'nvim-telescope/telescope-dap.nvim', lazy = true },
+		{ 'nvim-telescope/telescope-frecency.nvim',    lazy = true },
+		{ 'nvim-telescope/telescope-dap.nvim',         lazy = true },
 	},
 	lazy = true,
 	cmd = { "Telescope" },

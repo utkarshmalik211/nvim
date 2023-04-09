@@ -17,7 +17,6 @@ function ConfigToggleTerm()
 		persist_size = true,
 		direction = 'horizontal',
 	}
-
 end
 
 return { 'akinsho/nvim-toggleterm.lua', config = ConfigToggleTerm, cmd = "ToggleTerm" }

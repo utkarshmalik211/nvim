@@ -45,8 +45,10 @@ function ConfigLuaSnips()
 	vim.cmd([[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O]])
 end
 
-return { -- lua snips
-	'L3MON4D3/LuaSnip', dependencies = {
+return {
+         -- lua snips
+	'L3MON4D3/LuaSnip',
+	dependencies = {
 		{ 'rafamadriz/friendly-snippets' },
 		{ 'saadparwaiz1/cmp_luasnip' }
 	},

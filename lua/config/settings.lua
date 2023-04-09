@@ -6,7 +6,6 @@ local g = vim.g
 
 o.termguicolors = true
 o.syntax = 'enable' --  Enables syntax highlighing
--- o.iskeyword = o.iskeyword .. '-'                        --  treat dash separated words as a word text object--
 o.hidden = true --  Required to keep multiple buffers open multiple buffers
 o.encoding = 'utf-8' --  The encoding displayed
 o.whichwrap = o.whichwrap .. '<,>,[,],h,l'
@@ -43,6 +42,8 @@ opt.undodir = "/Users/utkarshmalik/.config/nvim/.undo"
 opt.undofile = true
 opt.undolevels = 100
 opt.undoreload = 100
+opt.mouse = ""
+opt.equalalways = true
 
 wo.conceallevel = 0 --  So that I can see `` in markdown files
 wo.wrap = false --  Display long lines as just one line
@@ -50,7 +51,6 @@ wo.signcolumn = 'yes' --  Always show the signcolumn, otherwise it would shift t
 wo.number = true --  Line numbers
 wo.relativenumber = true --  Line numbers
 wo.cursorline = true --  Enable highlighting of the current line
-opt.mouse = ""
 
 bo.tabstop = 4 --  Insert 2 spaces for a tab
 bo.softtabstop = 4 --  Insert 2 spaces for a tab
@@ -60,10 +60,3 @@ bo.smartindent = true --  Makes indenting smart
 
 bo.formatoptions = bo.formatoptions:gsub('cro', '') -- Stop newline continution of commenaaaaats
 
------------------------------------------------------------------------------------
----------------------------netrw config--------------------------------------------
-g.netrw_liststyle = 3
-g.netrw_banner = 0
-g.netrw_browse_split = 4
-g.netrw_altv = 1
-g.netrw_winsize = 25

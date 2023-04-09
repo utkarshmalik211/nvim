@@ -1,3 +1,0 @@
--- vim.cmd [[packadd nvim-treesitter]]
--- vim.cmd [[packadd nvim-treesitter-context]]
--- vim.cmd [[packadd playground]]
