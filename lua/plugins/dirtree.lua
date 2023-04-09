@@ -4,5 +4,5 @@ return {
 	config = function()
 		require("nvim-tree").setup {}
 	end,
-	cmd = "NvimTreeToggle",
+	cmd = { "NvimTreeToggle", "NvimTreeRefresh" },
 }

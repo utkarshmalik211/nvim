@@ -3,8 +3,8 @@ function ConfigStatusLine()
 		options = {
 			icons_enabled = true,
 			theme = 'auto',
-			component_separators = { left = '', right = '' },
-			section_separators = { left = '', right = '' },
+			section_separators = '',
+			component_separators = '',
 			disabled_filetypes = {
 				statusline = {},
 				winbar = {},
@@ -13,7 +13,7 @@ function ConfigStatusLine()
 			always_divide_middle = true,
 			globalstatus = true,
 			refresh = {
-				statusline = 900,
+				statusline = 1000,
 				tabline = 1200,
 				winbar = 1200,
 			}
@@ -21,8 +21,14 @@ function ConfigStatusLine()
 		sections = {
 			lualine_a = { 'mode' },
 			lualine_b = { 'branch', 'diff', 'diagnostics' },
-			lualine_c = { 'filename' },
-			lualine_x = {},
+			lualine_c = {
+				{
+					function() return "%=" end,
+					component_separators = ''
+				},
+				'filename'
+			},
+			lualine_x = { 'filetype' },
 			lualine_y = { 'progress' },
 			lualine_z = { 'location' }
 		},

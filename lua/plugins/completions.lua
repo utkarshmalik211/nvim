@@ -109,4 +109,5 @@ return {
 		{ 'j-hui/fidget.nvim' }
 	},
 	config = ConfigCompletions,
+	event = "VeryLazy",
 }
