@@ -9,9 +9,9 @@ vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
 
 require('config.keymappings') -- load key bindings
-require('config.settings') -- load vim settings
+require('config.settings')    -- load vim settings
 
-require('config.plugins') -- load plugins
+require('config.plugins')     -- load plugins
 
 
 require('config.theme')

@@ -1,9 +1,7 @@
 function ConfigLuaSnips()
 	local ls = require('luasnip')
 	local types = require("luasnip.util.types")
-	require('luasnip.loaders.from_lua').load({ paths = '/Users/utkarshmalik/.config/nvim/snippets/' })
-
-	-- Every unspecified option will be set to the default.
+	require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
 	ls.config.set_config({
 		history = true,
 		-- Update more often, :h events for more info.
@@ -46,10 +44,9 @@ function ConfigLuaSnips()
 end
 
 return {
-         -- lua snips
+	-- lua snips
 	'L3MON4D3/LuaSnip',
 	dependencies = {
-		{ 'rafamadriz/friendly-snippets' },
 		{ 'saadparwaiz1/cmp_luasnip' }
 	},
 	event = "InsertEnter",

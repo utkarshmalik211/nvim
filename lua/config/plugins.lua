@@ -15,8 +15,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
 	defaults = { lazy = true },
-	install = { colorscheme = { "catpuccin" } },
-	checker = { enabled = true },
+	install = { colorscheme = { "kanagawa-dragon" } },
+	checker = {
+		enabled = true,
+		notify = false, -- get a notification when new updates are found
+		frequency = 3600*24, -- check for updates every hour
+	},
+	dev = {
+		-- directory where you store your local plugin projects
+		path = "~/dev/neovim-plugins/",
+		fallback = false, -- Fallback to git when local plugin doesn't exist
+	},
 	performance = {
 		rtp = {
 			disabled_plugins = {
@@ -31,5 +40,4 @@ require("lazy").setup("plugins", {
 			},
 		},
 	},
-	-- debug = true,
 })

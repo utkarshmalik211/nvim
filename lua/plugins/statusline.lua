@@ -40,7 +40,7 @@ function ConfigStatusLine()
 			lualine_y = {},
 			lualine_z = {}
 		},
-		extensions = {}
+		extensions = {},
 	})
 end
 

@@ -44,6 +44,6 @@ end
 
 return {
 	'lewis6991/gitsigns.nvim', -- show git stuff in signcolumn
-	event = "VeryLazy",
+	event = "BufReadPost",
 	config = ConfigGitSigns
 }

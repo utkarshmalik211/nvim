@@ -91,13 +91,12 @@ end
 return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
-		{ 'BurntSushi/ripgrep',                        lazy = true },
-		{ 'nvim-telescope/telescope-fzy-native.nvim',  lazy = true }, -- fast search algo
-		{ 'nvim-telescope/telescope-media-files.nvim', lazy = true }, -- media preview
-		{ 'nvim-telescope/telescope-frecency.nvim',    lazy = true },
-		{ 'nvim-telescope/telescope-dap.nvim',         lazy = true },
+		{ 'BurntSushi/ripgrep' },
+		{ 'nvim-telescope/telescope-fzy-native.nvim' }, -- fast search algo
+		{ 'nvim-telescope/telescope-media-files.nvim' }, -- media preview
+		{ 'nvim-telescope/telescope-frecency.nvim' },
+		{ 'nvim-telescope/telescope-dap.nvim' },
 	},
-	lazy = true,
 	cmd = { "Telescope" },
 	config = ConfigTelescope,
 }

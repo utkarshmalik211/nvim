@@ -47,8 +47,12 @@ function ConfigTrouble()
 		},
 		use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 	}
+	require('todo-comments').setup()
 end
 
 return {
-	'folke/trouble.nvim', lazy = true, config = ConfigTrouble
+	'folke/trouble.nvim',  config = ConfigTrouble,
+	 dependencies = {
+			{ 'folke/todo-comments.nvim' }
+		}
 }

@@ -1,11 +1,64 @@
-local ls = require('luasnip')
-local i = ls.i --> insert nodo
-local s = ls.s --> snippet
-local t = ls.t --> text node
+-- DOCS:
+-- https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#snippets
+--
+-- GLOBAL VARS:
+-- https://github.com/L3MON4D3/LuaSnip/blob/69cb81cf7490666890545fef905d31a414edc15b/lua/luasnip/config.lua#L82-L104§
 
-local snippets, autosnippets = {}, {}
+local session = require("luasnip.session")
 
-local myfirstsnippet = s("snippet", { t("hi this is a test snippet in lua!") })
-table.insert(snippets, myfirstsnippet)
+local env = session.config.snip_env
+local s = env["s"]
+local t = env["t"]
+local i = env["i"]
+local parse = env["parse"]
 
-return snippets, autosnippets
+return {
+	s({ trig = "co", name = "Constant", dscr = "Insert a constant" }, {
+		t("const "), i(1, "name"), t(" = "), i(2, "value")
+	}),
+	s({ trig = "pl", name = "Formatted Print", dscr = "Insert a println" }, {
+		t("fmt.Println("), i(1, "value"), t(")")
+	}),
+	s({ trig = "pf", name = "Formatted Print", dscr = "Insert a formatted print statement" }, {
+		t("fmt.Printf(\"%#v\\n\", "), i(1, "value"), t(")")
+	}),
+	s({ trig = "sd", name = "spew dump", dscr = "dump a variable" }, {
+		t("spew.Dump("), i(1, "value"), t(")")
+	}),
+
+	parse({ trig = "ife", name = "If Err", dscr = "Insert a basic if err not nil statement" }, [[
+  if err != nil {
+    return err
+  }
+  ]]),
+
+	parse(
+		{
+			trig = "ifel",
+			name = "If Err Log Fatal",
+			dscr =
+			"Insert a basic if err not nil statement with log.Fatal"
+		}, [[
+  if err != nil {
+    log.Fatal(err)
+  }
+  ]]),
+
+	s({ trig = "ifew", name = "If Err Wrapped", dscr = "Insert a if err not nil statement with wrapped error" }, {
+		t("if err != nil {"),
+		t({ "", "  return errors.Wrap(err, \"" }),
+		i(1, "wrap message"),
+		t("\")"),
+		t({ "", "}" })
+	}),
+
+	parse({ trig = "ma", name = "Main Package", dscr = "Basic main package structure" }, [[
+  package main
+
+  import "fmt"
+
+  func main() {
+    fmt.Printf("%+v\n", "...")
+  }
+  ]]),
+}

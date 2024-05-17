@@ -3,9 +3,9 @@ function ConfigTreesitter()
 
 	ts_config.setup {
 		ensure_installed = {
-			"javascript", "typescript", "tsx", "jsdoc", "cpp", "jsonc",
-			"html", "css", "lua", "c", "rust", "go", "java", "query",
-			"python", "rst", "svelte"
+			"javascript", "typescript",
+			"html", "css", "lua", "rust", "go", "query",
+			"python", "zig"
 		},
 
 		highlight = {
@@ -18,7 +18,7 @@ function ConfigTreesitter()
 
 		textobjects = {
 			select = {
-				enable = true,
+				enable = false,
 				keymaps = {
 					["af"] = "@function.outer",
 					["if"] = "@function.inner",
@@ -29,7 +29,7 @@ function ConfigTreesitter()
 				},
 			},
 			swap = {
-				enable = true,
+				enable = false,
 				swap_next = {
 					["<Leader>a"] = "@parameter.inner",
 				},
@@ -67,7 +67,7 @@ function ConfigTreesitter()
 		max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
 		trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
 		patterns = {
-		        -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+			-- Match patterns for TS nodes. These get wrapped to match at word boundaries.
 			-- For all filetypes
 			-- Note that setting an entry here replaces all other patterns for this entry.
 			-- By setting the 'default' entry below, you can control which nodes you want to

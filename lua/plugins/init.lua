@@ -3,25 +3,29 @@ local plugins = {
 	'nvim-lua/plenary.nvim',
 	'neovim/nvim-lspconfig',
 	'kyazdani42/nvim-web-devicons',
-	{ 'mbbill/undotree',        event = "VeryLazy" },
+	{ 'mbbill/undotree' },
+
 	-- dap for dabs
 	{ 'mfussenegger/nvim-dap' },
 	{ 'rcarriga/nvim-dap-ui' },
 
 	-- the new way to navigate
-	{ 'ThePrimeagen/harpoon',   event = "VeryLazy" },
+	{ 'ThePrimeagen/harpoon' },
 	{ 'machakann/vim-sandwich', event = { "InsertEnter" } },
 	{ 'rust-lang/rust.vim',     ft = { "rs" } },
 	{ 'tpope/vim-fugitive',     cmd = { "Git", "G" } }, -- git helpers inside neovim
-	-- { 'catppuccin/nvim', name = "catppuccin", config = function() require("catppuccin").setup() end, lazy = false }, -- nice colorscheme
 	{
-		'rebelot/kanagawa.nvim',
-		lazy = false,
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
 		config = function()
-			require('kanagawa').setup({})
+			require("catppuccin").setup({
+				flavour = "mocha",
+			})
 		end
 	},
-	{ 'airblade/vim-rooter', cmd = { "Rooter", "RooterToggle" } }, -- set project as pwd of vim
+	{ 'airblade/vim-rooter',            event = "VeryLazy" }, -- set project as pwd of vim
+	{ 'christoomey/vim-tmux-navigator', lazy = false }, -- set project as pwd of vim
 }
 
 return plugins

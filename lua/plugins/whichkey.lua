@@ -11,6 +11,7 @@ function ConfigWhichKey()
 	}
 	wk.register({
 		["<leader>"] = {
+			a = { function() require("aerial").toggle() end, "Aerial" },
 			b = {
 				name = "+buffers",
 				l = { "<cmd>Telescope buffers<cr>", "Buffers" },
@@ -23,7 +24,7 @@ function ConfigWhichKey()
 				q = { "<cmd>Telescope quickfix<cr>", "Quick Fix List" },
 				n = { "<cmd>enew<cr>", "New File" },
 			},
-			e = { "<cmd>NvimTreeToggle<CR>", "Harpoon UI" },
+			e = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
 			r = { "<cmd>NvimTreeRefresh<CR>", "Refresh Explorer" },
 			q = {
 				name = "+QuickFix List",
@@ -34,19 +35,14 @@ function ConfigWhichKey()
 				G = { "<cmd>:clast<CR>", "Last item in QuickFix list" },
 				o = { "<cmd>:copen<CR>", "Open QuickFix list" },
 			},
-			t = {
-				name = "+Terminal",
-				t = { "<cmd>ToggleTerm size=15<CR>", "Toggle Terminal" },
-				a = { "<cmd>ADDTERM<CR>", "Open another terminal" }
-			},
 			l = {
 				name = "+LSP",
 				D = { function() vim.diagnostic.open_float() end, "View Diagnostic Message" },
 				d = { function() vim.lsp.buf.definition() end, "Go to Declaration" },
-				r = { function() vim.lsp.buf.references() end, "Show References" },
+				r = { function() require("trouble").toggle("lsp_references") end, "Show References" },
+				R = { function() LspRename() end, "Show References" },
 				i = { function() vim.lsp.buf.implementation() end, "Implementation" },
 				t = { function() require("trouble").toggle() end, "toggle trouble diagnostics" },
-				tr = { function() require("trouble").refresh() end, "refresh trouble diagnostics" },
 			},
 			g = {
 				name = "+Git",
@@ -59,10 +55,69 @@ function ConfigWhichKey()
 				p = { "<cmd> G push <CR>", "push" },
 				t = { "<cmd> <CR>", "tag" },
 				D = { "<cmd> <CR>", "deploy (merge dev with main and create tag)" },
+				w = {
+					name = "+Git Worktree",
+					s = {
+						function() require('telescope').extensions.git_worktree.git_worktrees() end,
+						"Switch" },
+					c = {
+						function()
+							require('telescope').extensions.git_worktree
+							    .create_git_worktree()
+						end, "Create" },
+				},
+				h = {
+					name = "+Github",
+					c = {
+						name = "+Commits",
+						c = { "<cmd>GHCloseCommit<cr>", "Close" },
+						e = { "<cmd>GHExpandCommit<cr>", "Expand" },
+						o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
+						p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
+						z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
+					},
+					i = {
+						name = "+Issues",
+						p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
+					},
+					l = {
+						name = "+Litee",
+						t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
+					},
+					r = {
+						name = "+Review",
+						b = { "<cmd>GHStartReview<cr>", "Begin" },
+						c = { "<cmd>GHCloseReview<cr>", "Close" },
+						d = { "<cmd>GHDeleteReview<cr>", "Delete" },
+						e = { "<cmd>GHExpandReview<cr>", "Expand" },
+						s = { "<cmd>GHSubmitReview<cr>", "Submit" },
+						z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
+					},
+					p = {
+						name = "+Pull Request",
+						c = { "<cmd>GHClosePR<cr>", "Close" },
+						d = { "<cmd>GHPRDetails<cr>", "Details" },
+						e = { "<cmd>GHExpandPR<cr>", "Expand" },
+						o = { "<cmd>GHOpenPR<cr>", "Open" },
+						p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
+						r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
+						t = { "<cmd>GHOpenToPR<cr>", "Open To" },
+						z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
+					},
+					t = {
+						name = "+Threads",
+						c = { "<cmd>GHCreateThread<cr>", "Create" },
+						n = { "<cmd>GHNextThread<cr>", "Next" },
+						t = { "<cmd>GHToggleThread<cr>", "Toggle" },
+					},
+				},
 			},
-			a = { function() require("harpoon.mark").add_file() end, "Harpoon add" },
+			H = { function() require("harpoon.mark").add_file() end, "Harpoon add" },
+			h = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon add" },
 			u = { vim.cmd.UndotreeToggle, "undo tree toggle" },
+			z = { "<cmd>ZenMode<CR>", "Zen Mode toggle" },
 		},
+		["-"]        = { "<CMD>Oil<CR>", "oil" },
 		["ca"]       = { function() vim.lsp.buf.code_action() end, "Code Action" },
 		["K"]        = { function() vim.lsp.buf.hover() end, "Hover" },
 		["<C-p>"]    = { function() vim.diagnostic.goto_prev() end, "Previous Error" },
